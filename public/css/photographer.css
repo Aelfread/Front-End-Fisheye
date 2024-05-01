@@ -77,6 +77,12 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+.dropdown {
+  width: 86%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
 .photograph_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

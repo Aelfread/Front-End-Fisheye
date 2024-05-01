@@ -126,8 +126,12 @@ function imagePhotographer(data) {
     const spanLike = document.createElement("span");
     spanLike.setAttribute("class", "heart-icon");
     const iHeart = document.createElement("i");
-    iHeart.setAttribute("class", "fa-regular fa-heart fa-2xl");
+    iHeart.setAttribute("class", "fa-regular fa-heart fa-2xl empty-heart");
     iHeart.setAttribute("aria-hidden", `true`);
+    const iHeartLiked = document.createElement("i");
+    iHeartLiked.setAttribute("class", "fa-solid fa-heart fa-2xl full-heart");
+    iHeartLiked.setAttribute("aria-hidden", `true`);
+    iHeartLiked.style.display = "none";
 
     const h3 = document.createElement("h3");
     h3.textContent = title;
@@ -157,6 +161,7 @@ function imagePhotographer(data) {
       fetch(`http://localhost:5500/data/photographers.json/${video}`);
     }
     spanLike.appendChild(iHeart);
+    spanLike.appendChild(iHeartLiked);
     spanLike.appendChild(p);
     divCardTxt.appendChild(h3);
     //divCardTxt.appendChild(p);
@@ -165,6 +170,27 @@ function imagePhotographer(data) {
     divCardContent.appendChild(divCardTxt);
     divCardContent.appendChild(spanLike);
     article.appendChild(divCardContent);
+
+    let likesCount = likes;
+    let alreadyLiked = false;
+
+    const handleClick = () => {
+      if (!alreadyLiked) {
+        likesCount++;
+        p.textContent = `${likesCount}`;
+        alreadyLiked = true; // Set the flag to true to prevent further likes
+        iHeart.style.display = "none";
+        iHeartLiked.style.display = "inline";
+      } else {
+        likesCount--;
+        p.textContent = `${likesCount}`;
+        alreadyLiked = false;
+        iHeart.style.display = "inline";
+        iHeartLiked.style.display = "none";
+      }
+    };
+
+    spanLike.addEventListener("click", handleClick);
     return article;
 
     //ajouter un video

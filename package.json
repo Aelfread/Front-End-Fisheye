@@ -1,10 +1,12 @@
 {
   "name": "front-end-fisheye",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --port 5500 --no-cors public/data/photographers.json"
+    "start": "json-server --port 5500 --no-cors public/data/photographers.json",
+    "dev": "http-server",
+    "lint": "eslint *.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +14,17 @@
     "json-server": "^0.17.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.3.1"
-  }
+    "@eslint/js": "^9.2.0",
+    "@faker-js/faker": "^6.3.1",
+    "eslint": "^9.2.0",
+    "globals": "^15.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aelfread/Front-End-Fisheye.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aelfread/Front-End-Fisheye/issues"
+  },
+  "homepage": "https://github.com/Aelfread/Front-End-Fisheye#readme"
 }

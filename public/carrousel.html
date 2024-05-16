@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
-    <link href="css/carrousel.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/carrousel.css" />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
       rel="stylesheet"
@@ -17,78 +15,33 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Fisheye - photographe</title>
+
+    <title>Vanilla JS Carousel</title>
   </head>
-  <body id="body">
-    <main id="main-wrapper" aria-hidden="false">
-      <h1>Your carousel</h1>
-      <ul class="carousel" aria-label="Our selection of Recipes">
-        <li class="carousel-item item-0" aria-hidden="false">
-          <div role="button" class="controls controls-left">
-            <span class="img prev-image">
-              <i aria-hidden="true" class="fa fa-arrow-circle-left"></i>
-            </span>
-            <p class="sr-only">Previous</p>
+
+  <body>
+    <main>
+      <div class="container">
+        <button id="left-btn"><em class="arrow"></em></button>
+        <article>
+          <img id="carousel" src="" alt="" />
+          <video id="video" src=""></video>
+          <div class="card-content-modal">
+            <div class="card-txt-modal">
+              <h3 id="title"></h3>
+            </div>
           </div>
-          <div role="button" class="controls controls-right">
-            <span class="img next-image">
-              <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>
-            </span>
-            <p class="sr-only">Next</p>
-          </div>
-          <div class="caroussel-title">
-            <h2>Item 1</h2>
-          </div>
-        </li>
-        <li class="carousel-item item-1" aria-hidden="true">
-          <div role="button" class="controls controls-left">
-            <span class="img prev-image">
-              <i aria-hidden="true" class="fa fa-arrow-circle-left"></i>
-            </span>
-            <p class="sr-only">Previous</p>
-          </div>
-          <div role="button" class="controls controls-right">
-            <span class="img next-image">
-              <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>
-            </span>
-            <p class="sr-only">Next</p>
-          </div>
-          <div class="caroussel-title">
-            <h2>Item 2</h2>
-          </div>
-        </li>
-        <li class="carousel-item item-2" aria-hidden="true">
-          <div role="button" class="controls controls-left">
-            <span class="img prev-image">
-              <i aria-hidden="true" class="fa fa-arrow-circle-left"></i>
-            </span>
-            <p class="sr-only">Previous</p>
-          </div>
-          <div role="button" class="controls controls-right">
-            <span class="img next-image">
-              <i aria-hidden="true" class="fa fa-arrow-circle-right"></i>
-            </span>
-            <p class="sr-only">Next</p>
-          </div>
-          <div class="caroussel-title">
-            <h2>Item 3</h2>
-          </div>
-        </li>
-      </ul>
-      <div>
-        <button class="carousel-pause-btn">Pause carousel</button>
+          <em
+            class="fa-solid fa-xmark fa-2xl"
+            onclick="closeModal()"
+            id="modalClosebtn"
+          ></em>
+        </article>
+
+        <button id="right-btn"><em class="arrow"></em></button>
       </div>
     </main>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <script src="/scripts/pages/carousel.js"></script>
+
+    <script src="/scripts/pages/carrousel.js"></script>
   </body>
 </html>

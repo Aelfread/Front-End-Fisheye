@@ -1,75 +1,136 @@
-/* Global */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.carousel {
-  position: relative;
+/** {
   padding: 0;
   margin: 0;
 }
 
-.carousel-item {
-  height: 200px;
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  list-style-type: none;
-}
-
-.item-0 {
-  background-color: tomato;
-}
-
-.item-1 {
-  background-color: blue;
-  display: none;
-}
-
-.item-2 {
-  background-color: green;
-  display: none;
-}
-
-.img {
-  height: 40px;
-  width: 40px;
-  background-color: white;
-  border-radius: 50%;
+body {
+  font-family: "Roboto", sans-serif;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+main {
+  width: 1440px;
+  height: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+}
+h3 {
+  font-size: 24px;
+  color: #901c1c;
+}
+article {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}*/
+
+.carrousel_modal_container {
+  width: 1253px;
+  height: 984px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*  box-shadow is from materialize css's website */
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}
+
+.carrousel_modal_close {
+  font-size: 4em;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
+  top: 50px;
+  right: 30px;
+  color: #901c1c;
+}
+.fa-2xl {
+}
+/*.container img {
+  width: 1050px;
+  height: 900px;
+  z-index: -2;
+  object-fit: cover;
+  border-radius: 5px;
+}*/
+.carrousel_modal_container #carousel {
+  width: 1050px;
+  height: 900px;
+  z-index: -1;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.carrousel_modal_container video {
+  width: 1050px;
+  height: 900px;
+  z-index: 0;
+  object-fit: cover;
+  border-radius: 5px;
+}
+#modalClosebtn {
+  /*position: relative;
+  font-size: 6.2em;
+  top: -800px;
+  bottom: 34px;
+  right: -600px;*/
 }
 
-.prev-image {
-  left: 20px;
+.fa-2xl {
+  color: #901c1c;
 }
 
-.fa-arrow-circle-left,
-.fa-arrow-circle-right {
-  font-size: 30px;
-}
-
-.next-image {
-  right: 20px;
-}
-
-.caroussel-title {
-  height: 100%;
+.card-content {
   width: 100%;
+}
+
+button {
+  height: 10%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1em;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /*position: absolute;*/
+}
+
+button .arrow {
+  border: solid #901c1c;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 10px;
+  transition: transform 0.3s ease-out;
+  outline: none;
+}
+
+#right-btn {
+  margin: auto 0 auto -2em;
+  position: relative;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+}
+
+#right-btn .arrow {
+  transform: rotate(-45deg);
+}
+
+#left-btn {
+  z-index: 0;
+  margin: auto -2em auto 0;
+  position: relative;
+  right: 40px;
+  top: 0;
+  bottom: 0;
+}
+
+#left-btn .arrow {
+  transform: rotate(135deg);
 }

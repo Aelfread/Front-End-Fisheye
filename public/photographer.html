@@ -3,6 +3,7 @@
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <link href="css/carrousel.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link
@@ -20,7 +21,7 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" alt="Fisheye logo"/>
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -28,18 +29,38 @@
           Contactez-moi
         </button>
       </div>
-      <div class="dropdown">
-        <label for="dropdown">Trier par</label>
-        <select id="dropdown">
-          <option>popularité</option>
-          <option>date</option>
-          <option>titre</option>
+      <!--div class="dropdown">
+        <label for="dropdown" class="dropdown_label">Trier par</label>
+        <select id="dropdown" style="display: none">
+          <option value="popularité">popularité</option>
+          <option value="date">date</option>
+          <option value="titre">titre</option>
         </select>
+      </!--div-->
+      <!-- Custom dropdown container -->
+      <div class="parent-container">
+        <div class="select-container">
+          <span class="select-text">Trier par</span>
+          <div class="custom-select">
+            <div class="select-selected">
+              (Trier)<span class="select-arrow"></span>
+            </div>
+
+            <div class="select-items select-hide">
+              <div class="select-item" value="Popularité">Popularité</div>
+              <span class="border-span"></span>
+              <div class="select-item" value="Date">Date</div>
+              <span class="border-span"></span>
+              <div class="select-item" value="Titre">Titre</div>
+              <!-- More custom options -->
+            </div>
+          </div>
+        </div>
       </div>
       <div class="photograph_section"></div>
       <div class="photograph_likes">
-        <h2 class="likes">297 081<i class="fa-solid fa-heart"></i></h2>
-
+        <h2 class="likes">0</h2>
+        <em class="fa-solid fa-heart fa-xl photograph_heart"></em>
         <p class="price">300€/jour</p>
       </div>
     </main>
@@ -53,6 +74,7 @@
             src="assets/icons/close.svg"
             onclick="closeModal()"
             id="modalClosebtn"
+            alt ="Bouton de fermerture du formulaire de contact"
           />
         </header>
         <form name="contact" method="get" action="photographer.html">
@@ -78,7 +100,33 @@
         </form>
       </div>
     </div>
-    <script type="module" src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <div id="carrousel_modal">
+      <div class="carrousel_modal_container">
+        <button id="left-btn"><em class="arrow"></em></button>
+        <article>
+          <img id="carousel" src="" alt="" />
+          <video id="video" src=""></video>
+          
+          <em
+            class="fa-solid fa-xmark carrousel_modal_close"
+            
+            id="modalClosebtnn"
+          ></em>
+          <div class="card-content-modal">
+            <div class="card-txt-modal">
+              
+            </div>
+        </div>
+          
+        </article>
+
+        <button id="right-btn"><em class="arrow"></em></button>
+
+      </div>
+    </div>
+
+    <script type ="module" src="/scripts/pages/photographer.js"></script>
+    <script   src="/scripts/utils/contactForm.js"></script>
+    <script type="module" src="/scripts/pages/carrousel.js"></script>
   </body>
 </html>
